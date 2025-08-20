@@ -23,9 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-py7*ai=54bscrp2sr#3tt)ie$py78=co)b8a&n=5rppe6h6pta'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'booknooks-project-app.herokuapp.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
