@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-py7*ai=54bscrp2sr#3tt)ie$py78=co)b8a&n=5rppe6h6pta'
+SECRET_KEY = os.environ.get('django-insecure-py7*ai=54bscrp2sr#3tt)ie$py78=co)b8a&n=5rppe6h6pta', 'dev-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('', 'False') == 'True'
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = [
     'booknooks-project-app.herokuapp.com',
@@ -32,6 +33,9 @@ ALLOWED_HOSTS = [
     '127.0.0.1'
 ]
 
+CSRF_TRUSTED-ORIGINS = [
+    'http://booknooks-project-app.herokuapp.com',
+]
 
 # Application definition
 
@@ -79,10 +83,13 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default=f'sqlite:///{BASE_DIR / 'db.sqlite3'}')
-    }
+    'default': dj_database_url.config(
+        default=f'sqlite:///{BASE_DIR / 'db.sqlite3'}',
+        conn_max_age=600,
+        ssl_require=False                                 
+    )
+}
 
 
 # Password validation
