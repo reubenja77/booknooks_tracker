@@ -1,0 +1,200 @@
+2025-08-20T22:34:25.709580+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-08-20T22:34:25.709580+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:34:25.709581+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:34:25.709581+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+2025-08-20T22:34:25.709581+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-08-20T22:34:25.709581+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:34:25.709581+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:34:25.709582+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+2025-08-20T22:34:25.709582+00:00 app[web.1]: ModuleNotFoundError: No module named 'booktracker'
+2025-08-20T22:34:25.709621+00:00 app[web.1]: [2025-08-20 22:34:25 +0000] [9] [INFO] Worker exiting (pid: 9)
+2025-08-20T22:34:25.735616+00:00 app[web.1]: [2025-08-20 22:34:25 +0000] [2] [INFO] Shutting down: Master
+2025-08-20T22:34:25.735640+00:00 app[web.1]: [2025-08-20 22:34:25 +0000] [2] [INFO] Reason: Worker failed to boot.
+2025-08-20T22:34:25.807488+00:00 heroku[web.1]: Process exited with status 3
+2025-08-20T22:34:25.829323+00:00 heroku[web.1]: State changed from starting to crashed
+2025-08-20T22:34:25.832168+00:00 heroku[web.1]: State changed from crashed to starting
+2025-08-20T22:34:27.534216+00:00 heroku[web.1]: Starting process with command `gunicorn booktracker.wsgi`
+2025-08-20T22:34:28.039014+00:00 app[web.1]: Python buildpack: Detected 512 MB available memory and 8 CPU cores.
+2025-08-20T22:34:28.039112+00:00 app[web.1]: Python buildpack: Defaulting WEB_CONCURRENCY to 2 based on the available memory.
+2025-08-20T22:34:28.213591+00:00 app[web.1]: /app/.heroku/python/lib/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+2025-08-20T22:34:28.213593+00:00 app[web.1]: import pkg_resources
+2025-08-20T22:34:28.237747+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [2] [INFO] Starting gunicorn 20.1.0
+2025-08-20T22:34:28.238044+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [2] [INFO] Listening at: http://0.0.0.0:3211 (2)
+2025-08-20T22:34:28.238084+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [2] [INFO] Using worker: sync
+2025-08-20T22:34:28.240199+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [9] [INFO] Booting worker with pid: 9
+2025-08-20T22:34:28.244418+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [9] [ERROR] Exception in worker process
+2025-08-20T22:34:28.244419+00:00 app[web.1]: Traceback (most recent call last):
+2025-08-20T22:34:28.244420+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2025-08-20T22:34:28.244420+00:00 app[web.1]: worker.init_process()
+2025-08-20T22:34:28.244420+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.244421+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-08-20T22:34:28.244421+00:00 app[web.1]: self.load_wsgi()
+2025-08-20T22:34:28.244421+00:00 app[web.1]: ~~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.244421+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-08-20T22:34:28.244421+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2025-08-20T22:34:28.244422+00:00 app[web.1]: ~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.244422+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-08-20T22:34:28.244422+00:00 app[web.1]: self.callable = self.load()
+2025-08-20T22:34:28.244422+00:00 app[web.1]: ~~~~~~~~~^^
+2025-08-20T22:34:28.244423+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-08-20T22:34:28.244423+00:00 app[web.1]: return self.load_wsgiapp()
+2025-08-20T22:34:28.244423+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.244423+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-08-20T22:34:28.244423+00:00 app[web.1]: return util.import_app(self.app_uri)
+2025-08-20T22:34:28.244424+00:00 app[web.1]: ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+2025-08-20T22:34:28.244424+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/util.py", line 359, in import_app
+2025-08-20T22:34:28.244424+00:00 app[web.1]: mod = importlib.import_module(module)
+2025-08-20T22:34:28.244425+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-08-20T22:34:28.244425+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2025-08-20T22:34:28.244425+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-08-20T22:34:28.244425+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:34:28.244425+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:34:28.244426+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+2025-08-20T22:34:28.244426+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-08-20T22:34:28.244426+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:34:28.244426+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:34:28.244426+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+2025-08-20T22:34:28.244427+00:00 app[web.1]: ModuleNotFoundError: No module named 'booktracker'
+2025-08-20T22:34:28.244468+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [9] [INFO] Worker exiting (pid: 9)
+2025-08-20T22:34:28.251905+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [10] [INFO] Booting worker with pid: 10
+2025-08-20T22:34:28.256207+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [10] [ERROR] Exception in worker process
+2025-08-20T22:34:28.256208+00:00 app[web.1]: Traceback (most recent call last):
+2025-08-20T22:34:28.256208+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2025-08-20T22:34:28.256208+00:00 app[web.1]: worker.init_process()
+2025-08-20T22:34:28.256209+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.256209+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-08-20T22:34:28.256209+00:00 app[web.1]: self.load_wsgi()
+2025-08-20T22:34:28.256209+00:00 app[web.1]: ~~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.256209+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-08-20T22:34:28.256210+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2025-08-20T22:34:28.256210+00:00 app[web.1]: ~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.256210+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-08-20T22:34:28.256210+00:00 app[web.1]: self.callable = self.load()
+2025-08-20T22:34:28.256210+00:00 app[web.1]: ~~~~~~~~~^^
+2025-08-20T22:34:28.256211+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-08-20T22:34:28.256211+00:00 app[web.1]: return self.load_wsgiapp()
+2025-08-20T22:34:28.256211+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2025-08-20T22:34:28.256211+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-08-20T22:34:28.256211+00:00 app[web.1]: return util.import_app(self.app_uri)
+2025-08-20T22:34:28.256211+00:00 app[web.1]: ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+2025-08-20T22:34:28.256212+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/util.py", line 359, in import_app
+2025-08-20T22:34:28.256212+00:00 app[web.1]: mod = importlib.import_module(module)
+2025-08-20T22:34:28.256212+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-08-20T22:34:28.256212+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2025-08-20T22:34:28.256212+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-08-20T22:34:28.256213+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:34:28.256213+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:34:28.256213+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+2025-08-20T22:34:28.256213+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-08-20T22:34:28.256213+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:34:28.256214+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:34:28.256214+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+2025-08-20T22:34:28.256214+00:00 app[web.1]: ModuleNotFoundError: No module named 'booktracker'
+2025-08-20T22:34:28.256261+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [10] [INFO] Worker exiting (pid: 10)
+2025-08-20T22:34:28.273913+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [2] [WARNING] Worker with pid 10 was terminated due to signal 15
+2025-08-20T22:34:28.372593+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [2] [INFO] Shutting down: Master
+2025-08-20T22:34:28.372611+00:00 app[web.1]: [2025-08-20 22:34:28 +0000] [2] [INFO] Reason: Worker failed to boot.
+2025-08-20T22:34:28.440890+00:00 heroku[web.1]: Process exited with status 3
+2025-08-20T22:34:28.463716+00:00 heroku[web.1]: State changed from starting to crashed
+2025-08-20T22:34:29.000000+00:00 app[api]: Build succeeded
+2025-08-20T22:36:32.121323+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=booknooks-project-app-5c3a20ad5555.herokuapp.com request_id=7ebdac2b-e8c0-dc79-e8cf-24bd2ef4e094 fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-08-20T22:37:47.588064+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=booknooks-project-app-5c3a20ad5555.herokuapp.com request_id=58d31d71-39be-5ad8-43e1-8d6b2e7a87f5 fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-08-20T22:44:55.800394+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=booknooks-project-app-5c3a20ad5555.herokuapp.com request_id=94f3d1d8-eb9f-487a-ca74-d446bc6f77ae fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-08-20T22:46:11.142684+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=booknooks-project-app-5c3a20ad5555.herokuapp.com request_id=139349fa-223d-fdd7-f13f-fcffa8f52e1c fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-08-20T22:56:19.158900+00:00 heroku[web.1]: State changed from crashed to starting
+2025-08-20T22:56:20.915764+00:00 heroku[web.1]: Starting process with command `gunicorn booktracker.wsgi`
+2025-08-20T22:56:21.434910+00:00 app[web.1]: Python buildpack: Detected 512 MB available memory and 8 CPU cores.
+2025-08-20T22:56:21.434988+00:00 app[web.1]: Python buildpack: Defaulting WEB_CONCURRENCY to 2 based on the available memory.
+2025-08-20T22:56:21.605588+00:00 app[web.1]: /app/.heroku/python/lib/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+2025-08-20T22:56:21.605589+00:00 app[web.1]: import pkg_resources
+2025-08-20T22:56:21.628830+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [2] [INFO] Starting gunicorn 20.1.0
+2025-08-20T22:56:21.629077+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [2] [INFO] Listening at: http://0.0.0.0:12684 (2)
+2025-08-20T22:56:21.629110+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [2] [INFO] Using worker: sync
+2025-08-20T22:56:21.630910+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [9] [INFO] Booting worker with pid: 9
+2025-08-20T22:56:21.634894+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [9] [ERROR] Exception in worker process
+2025-08-20T22:56:21.634895+00:00 app[web.1]: Traceback (most recent call last):
+2025-08-20T22:56:21.634895+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2025-08-20T22:56:21.634896+00:00 app[web.1]: worker.init_process()
+2025-08-20T22:56:21.634896+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~^^
+2025-08-20T22:56:21.634896+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-08-20T22:56:21.634896+00:00 app[web.1]: self.load_wsgi()
+2025-08-20T22:56:21.634897+00:00 app[web.1]: ~~~~~~~~~~~~~~^^
+2025-08-20T22:56:21.634897+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-08-20T22:56:21.634897+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2025-08-20T22:56:21.634897+00:00 app[web.1]: ~~~~~~~~~~~~~^^
+2025-08-20T22:56:21.634898+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-08-20T22:56:21.634898+00:00 app[web.1]: self.callable = self.load()
+2025-08-20T22:56:21.634898+00:00 app[web.1]: ~~~~~~~~~^^
+2025-08-20T22:56:21.634898+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-08-20T22:56:21.634898+00:00 app[web.1]: return self.load_wsgiapp()
+2025-08-20T22:56:21.634899+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2025-08-20T22:56:21.634899+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-08-20T22:56:21.634899+00:00 app[web.1]: return util.import_app(self.app_uri)
+2025-08-20T22:56:21.634899+00:00 app[web.1]: ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+2025-08-20T22:56:21.634899+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/util.py", line 359, in import_app
+2025-08-20T22:56:21.634899+00:00 app[web.1]: mod = importlib.import_module(module)
+2025-08-20T22:56:21.634900+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-08-20T22:56:21.634900+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2025-08-20T22:56:21.634900+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-08-20T22:56:21.634901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:56:21.634901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:56:21.634901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+2025-08-20T22:56:21.634901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-08-20T22:56:21.634901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T22:56:21.634902+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T22:56:21.634902+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+2025-08-20T22:56:21.634902+00:00 app[web.1]: ModuleNotFoundError: No module named 'booktracker'
+2025-08-20T22:56:21.634949+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [9] [INFO] Worker exiting (pid: 9)
+2025-08-20T22:56:21.659524+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [2] [INFO] Shutting down: Master
+2025-08-20T22:56:21.659550+00:00 app[web.1]: [2025-08-20 22:56:21 +0000] [2] [INFO] Reason: Worker failed to boot.
+2025-08-20T22:56:21.731166+00:00 heroku[web.1]: Process exited with status 3
+2025-08-20T22:56:21.755203+00:00 heroku[web.1]: State changed from starting to crashed
+2025-08-20T23:38:22.669259+00:00 heroku[web.1]: State changed from crashed to starting
+2025-08-20T23:38:24.334773+00:00 heroku[web.1]: Starting process with command `gunicorn booktracker.wsgi`
+2025-08-20T23:38:24.909351+00:00 app[web.1]: Python buildpack: Detected 512 MB available memory and 8 CPU cores.
+2025-08-20T23:38:24.909473+00:00 app[web.1]: Python buildpack: Defaulting WEB_CONCURRENCY to 2 based on the available memory.
+2025-08-20T23:38:25.067985+00:00 app[web.1]: /app/.heroku/python/lib/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+2025-08-20T23:38:25.067987+00:00 app[web.1]: import pkg_resources
+2025-08-20T23:38:25.092155+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [2] [INFO] Starting gunicorn 20.1.0
+2025-08-20T23:38:25.092442+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [2] [INFO] Listening at: http://0.0.0.0:52471 (2)
+2025-08-20T23:38:25.092483+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [2] [INFO] Using worker: sync
+2025-08-20T23:38:25.094278+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [9] [INFO] Booting worker with pid: 9
+2025-08-20T23:38:25.098300+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [9] [ERROR] Exception in worker process
+2025-08-20T23:38:25.098301+00:00 app[web.1]: Traceback (most recent call last):
+2025-08-20T23:38:25.098301+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2025-08-20T23:38:25.098302+00:00 app[web.1]: worker.init_process()
+2025-08-20T23:38:25.098302+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~^^
+2025-08-20T23:38:25.098302+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-08-20T23:38:25.098303+00:00 app[web.1]: self.load_wsgi()
+2025-08-20T23:38:25.098303+00:00 app[web.1]: ~~~~~~~~~~~~~~^^
+2025-08-20T23:38:25.098303+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-08-20T23:38:25.098310+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2025-08-20T23:38:25.098311+00:00 app[web.1]: ~~~~~~~~~~~~~^^
+2025-08-20T23:38:25.098311+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-08-20T23:38:25.098311+00:00 app[web.1]: self.callable = self.load()
+2025-08-20T23:38:25.098312+00:00 app[web.1]: ~~~~~~~~~^^
+2025-08-20T23:38:25.098312+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-08-20T23:38:25.098312+00:00 app[web.1]: return self.load_wsgiapp()
+2025-08-20T23:38:25.098312+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2025-08-20T23:38:25.098313+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-08-20T23:38:25.098314+00:00 app[web.1]: return util.import_app(self.app_uri)
+2025-08-20T23:38:25.098314+00:00 app[web.1]: ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+2025-08-20T23:38:25.098314+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/site-packages/gunicorn/util.py", line 359, in import_app
+2025-08-20T23:38:25.098314+00:00 app[web.1]: mod = importlib.import_module(module)
+2025-08-20T23:38:25.098315+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-08-20T23:38:25.098315+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2025-08-20T23:38:25.098315+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-08-20T23:38:25.098316+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T23:38:25.098316+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T23:38:25.098316+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+2025-08-20T23:38:25.098316+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-08-20T23:38:25.098317+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-08-20T23:38:25.098317+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-08-20T23:38:25.098317+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+2025-08-20T23:38:25.098318+00:00 app[web.1]: ModuleNotFoundError: No module named 'booktracker'
+2025-08-20T23:38:25.098344+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [9] [INFO] Worker exiting (pid: 9)
+2025-08-20T23:38:25.123709+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [2] [INFO] Shutting down: Master
+2025-08-20T23:38:25.123741+00:00 app[web.1]: [2025-08-20 23:38:25 +0000] [2] [INFO] Reason: Worker failed to boot.
+2025-08-20T23:38:25.192699+00:00 heroku[web.1]: Process exited with status 3
+2025-08-20T23:38:25.211906+00:00 heroku[web.1]: State changed from starting to crashed
+2025-08-20T23:46:50.818737+00:00 heroku[router]: sock=client at=warning code=H27 desc="Client Request Interrupted" method=GET path="/" host=booknooks-project-app-5c3a20ad5555.herokuapp.com request_id=7fe4077b-d48c-2311-adb7-bd5cf6effce5 fwd="" dyno= connect=0ms service=0ms status=499 bytes=567 protocol=http1.1 tls=true tls_version=unknown
