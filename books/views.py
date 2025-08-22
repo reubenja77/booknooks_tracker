@@ -28,6 +28,17 @@ def book_create(request):
         else:
             form = BookForm(instance=book)
         return render(request, 'books/book_form.html', {'form': form})
+    
+def book_update(request, pk):
+    book = get_object_or_404(Book, pk=pk, owner=request.user)
+    if request.method == 'POST':
+        form = BookForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect('book_list')
+    else:
+        form = BookForm(instance=book)
+    return render(request, 'books/book_form.html', {'form': form})
 
 def book_delete(request, pk):
     book = get_object_or_404(Book, pk=pk, owner=request.user)
@@ -35,4 +46,4 @@ def book_delete(request, pk):
         book.delete()
         message.info(request, 'Book delete.')
         return redirect('book_list')
-    return render(request, books/book_confirm_delete.html', {'book': book})
+    return render(request, 'books/book_confirm_delete.html', {'book': book})
