@@ -34,12 +34,14 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://*.herokuapp.com',
+    'https://*.herokuapp.com',
     'http://localhost',
     'https://localhost',
     'http://127.0.0.1',
     'https://127.0.0.1',
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
