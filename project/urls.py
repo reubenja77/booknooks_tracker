@@ -22,5 +22,6 @@ urlpatterns = [
     path('', book_views.index, name='index'),
     path('books/', include('books.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup', book_views.signup, name='signup'),
     path('admin/', admin.site.urls),
 ]
