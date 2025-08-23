@@ -30,7 +30,7 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = [
     '.herokuapp.com',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
