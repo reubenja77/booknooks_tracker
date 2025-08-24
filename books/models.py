@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+#from django.contrib.auth.models import User
 
 # Create your models here.
 class Book(models.Model):
@@ -16,5 +17,9 @@ class Book(models.Model):
         blank=True
     )
 
+class Meta:
+    ordering = ['-id']
+
 def __str__(self):
     return f'{self.title} by {self.author}'
+
