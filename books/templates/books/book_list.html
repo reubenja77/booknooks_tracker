@@ -1,4 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 {% block content %}
-<h1>Book List Page</h1>
+    <h1>My Books</h1>
+
+    <p><a href="{% url 'book_create' %}">+ Add New Book</a></p>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong> by {{ book.author }}
+                {% if book.date_read %}
+                    (Read on {{ book.date_read }})
+                {% endif %}
+                <br>
+                {{ book.description|default:'No description' }}
+            </li>
+        {% empty %}
+            <li>No books yet - add your first one!</li>
+        {% endfor %} 
+    </ul>
 {% endblock %}
