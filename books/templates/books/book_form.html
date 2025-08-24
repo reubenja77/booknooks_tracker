@@ -1,8 +1,10 @@
-{% extends 'base.html' %} {% block content %}
-<h1>Add a New Book</h1>
+{% extends 'base.html' %} 
+{% block content %}
+<h1>{% if is_edit %}Edit Book{% else %}Add a New Book{% endif %}</h1>
 <form method="'post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Save</button>
+  {% csrf_token %} 
+  {{ form.as_p }}
+  <button type="submit">{% if is_edit %}Save Changes{% else %}Save{% endif %}</button>
   <a href="{% url 'book_list' %}">Cancel</a>
 </form>
 {% endblock %}
