@@ -27,12 +27,7 @@ SECRET_KEY = os.environ.get('django-insecure-py7*ai=54bscrp2sr#3tt)ie$py78=co)b8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = [
-    'booknooks-project-app-5c3a20ad5555.herokuapp.com',
-    'booknooks-project-app.herokuapp.com',
-    'localhost',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://booknooks-project-app-5c3a20ad5555.herokuapp.com',
