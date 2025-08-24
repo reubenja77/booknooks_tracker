@@ -42,7 +42,7 @@ def book_create(request):
             book = form.save(commit=False)
             book.owner = request.user
             book.save()
-            messages.success(request, 'Book added.')
+            messages.success(request, 'Book added successfully.')
             return redirect('book_list')
     else:
         form = BookForm()
