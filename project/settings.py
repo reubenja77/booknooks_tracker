@@ -27,7 +27,12 @@ SECRET_KEY = os.environ.get('django-insecure-py7*ai=54bscrp2sr#3tt)ie$py78=co)b8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'booknooks-project-app-5c3a20ad5555.herokuapp.com',
+    'booknooks-project-app.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://booknooks-project-app-5c3a20ad5555.herokuapp.com',
@@ -137,6 +142,19 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'book_list'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+# Logging to capture SuspiciousOperation/Bad Request details
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {'class': 'logging.Streamhandler'},
+    },
+    'loggers': {
+        'django.security': {'handlers': ['console'], 'level': 'WARNING'},
+        'django.request': {'handlers': ['console'], 'level': 'WARNING'},'
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
