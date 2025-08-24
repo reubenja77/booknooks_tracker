@@ -17,8 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from books import views as book_views
+from django.http import HttpResponse
+
+def healthz(request):
+    return HttpResponse('ok')
 
 urlpatterns = [
+    path('healthz/', healthz),
     path('admin/', admin.site.urls),
     path('', include('books.urls')),
     path('accounts/', include('django.contrib.auth.urls')), #login/logout/password
