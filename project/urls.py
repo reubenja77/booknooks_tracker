@@ -23,7 +23,6 @@ def healthz(request):
     return HttpResponse('ok')
 
 urlpatterns = [
-    path('healthz/', healthz),
     path('admin/', admin.site.urls),
     path('', include('books.urls')),
     path('accounts/', include('django.contrib.auth.urls')), #login/logout/password
