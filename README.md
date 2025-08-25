@@ -26,3 +26,36 @@
 | **Won't**          |   Social sharing of book lists                |   Out of scope: social integrations reserved for future versions.     |
 | **Won't**          |   Goodreads / Kindle import / export          |   Out of scope: third-party API integration not needed for project.   |
 | **Won't**          |   AI recommendation                           |   Out of scope: ML/AI recommendations not required for project.       |
+
+
+
+
+## Testing
+
+The **BookNooks Tracker App** includes automated tests for all *Must-Have* user stories.
+Tests are written using Django's built-in test framework and includes unit tests for MUST_HAVE features (add, list, edit, delete books; authentication; ownership checks).
+
+### How to Run Tests
+
+From the project root (same level as `manage.py`):
+
+```bash
+python3 manage.py test books -v 2
+
+
+Example test run:
+
+Ran 11 tests in 16.706s
+
+OK
+
+Other tests conducted were:
+
+# Create flow
+python3 manage.py test books.tests.test_book_create -v 2
+
+# List flow
+python3 manage.py test books.tests.test_book_list -v 2
+
+# Update/Delete flow
+python3 manage.py test books.tests.test_book_update_delete -v 2
