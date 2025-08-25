@@ -17,8 +17,8 @@ class AuthTests(TestCase):
 
     def test_login_redirects_to_books_list(self):
         resp = self.client.post(self.login_url, {
-            username='reuben',
-            password='testpass123',
+            'username':'reuben',
+            'password':'testpass123',
         })
         self.assertRedirects(resp, self.book_list_url)
 
