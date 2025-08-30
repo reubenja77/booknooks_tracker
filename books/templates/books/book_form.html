@@ -1,6 +1,6 @@
 {% extends "base.html" %} 
 {% block content %}
-<h1>{% if is_edit %}Edit Book{% else %}Add a New Book{% endif %}</h1>
+<h1 class="page-title">{% if is_edit %}Edit Book{% else %}Add a New Book{% endif %}</h1>
 
 <form method="post" class="mt-3">
   {% csrf_token %}
