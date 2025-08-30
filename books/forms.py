@@ -6,5 +6,8 @@ class BookForm(forms.ModelForm):
         model = Book
         fields = ['title', 'author', 'description', 'date_read']
         widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'author': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'date_read': forms.DateInput(attrs={'type': 'date'})
         }
