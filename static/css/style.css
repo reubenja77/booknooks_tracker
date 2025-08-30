@@ -1,126 +1,135 @@
 /* --- Theme --- */
-:root{
-    --brand-bg: #0c1117;
-    --brand-surface: #151b23;
-    --brand-accent: #5b9cff;   /* primary color */
-    --brand-accent-2: #d96bff; /* secondary color */
-    --brand-text: #e6edf3;
-    --brand-muted: #9aa7b2;
-    --brand-success: #38d39f;
-    --brand-danger: #ff6b6b;
+:root {
+    --bg: #F5F7FB;
+    --surface: #FFFFFF;
+    --text: #111827;
+    --muted: #6B7280;
+    --nav-bg: #0F172A;
+    --primary: #2563EB;
+    --success: #10B981;
+    --danger: #EF4444;
+    --border: #E5E7EB;
     --radius: 14px;
-    --shadow: 0 10px 26px rgba(0,0,0,.15);
+    --shadow: 0 10px 26px rgba(0, 0, 0, .08);
 }
 
 /* Global */
-body{
-    background: linear-gradient(180deg, var(--brand-bg), #0f1621);
-    color: var(--brand-text);
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 /* Navbar */
-.navbar{
-    background: linear-gradient(90deg, #0f1723, #0e1320);
+.navbar {
+    background-color: var(--nav-bg);
     box-shadow: var(--shadow);
 }
 
-.navbar-brand{
-  letter-spacing: .2px;
+.navbar-brand {
+    letter-spacing: .2px;
 }
 
-.navbar .nav-link{
-    color: var(--brand-muted);
+.navbar .nav-link {
+    color: #c7d2fe;
 }
 
 .navbar .nav-link:hover,
-.navbar .nav-link.active{
-    color: var(--brand-text);
+.navbar .nav-link.active {
+    color: #f4f4f4;
 }
 
 /* Container */
-.container{
+.container {
     max-width: 980px;
 }
 
 /* Headings */
-h1, h2, h3{
+h1,
+h2,
+h3 {
     font-weight: 700;
 }
 
 /* Buttons */
-.btn-primary{
-    background: var(--brand-accent);
-    border-color: var(--brand-accent);
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
     transition: transform .06s ease, box-shadow .2s ease;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 10px 18px rgba(91,156,255,.25);
+    box-shadow: 0 10px 18px rgba(37, 99, 235, .25);
 }
 
-.btn-warning{
+.btn-warning {
     color: #1b1f24;
     font-weight: 600;
 }
 
-.btn-danger{
-    border-color: var(--brand-danger);
-    background: var(--brand-danger);
+.btn-danger {
+    border-color: var(--danger);
+    background: var(danger);
+}
+
+.btn-success{
+    border-color: var(--success);
+    background: var(--success);
 }
 
 /* List */
-.list-group-item{
-    border: 1px solid #202938;
+.list-group-item {
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    background: var(--brand-surface);
+    background: var(--surface);
     margin-bottom: .6rem;
+    box-shadow: var(--shadow);
 }
 
-.list-group-item .fw-semibold{
+.list-group-item .fw-semibold {
     font-size: 1.05rem;
 }
 
-/* Form */
-.form-control{
-    color: var(--brand-text);
-    border-color: #223049;
+/* Forms */
+.form-control {
+    color: var(--text);
+    border-color: var(--border);
     border-radius: 10px;
-    background: #0f1621;
+    background: #f4f4f4;
 }
 
-.form-control:focus{
-    color: var(--brand-text);
-    border-color: var(--brand-accent);
-    background: #0f1621;
-    box-shadow: 0 0 0 .25rem rgba(91,156,255,.15);
+.form-control:focus {
+    border-color: var(--primary);
+    background: #f4f4f4;
+    box-shadow: 0 0 0 .25rem rgba(37, 99, 235, .15);
 }
 
 /* Alerts */
-.alert{
+.alert {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     border: 0;
 }
 
 /* Empty state */
-.empty-state{
-    border: 1px dashed #2b3a54;
-    background: linear-gradient(180deg, #0f1621, #0d1420);
-    color: var(--brand-muted);
+.empty-state {
+    border: 1px dashed var(--border);
+    background: var(--surface);
+    color: var(--muted);
     padding: 2rem;
     border-radius: var(--radius);
     text-align: center;
 }
 
 /* Underline for page titles */
-.page-title{
+.page-title {
     display: inline-block;
     padding-bottom: .25rem;
     position: relative;
 }
 
-.page-title::after{
+.page-title::after {
     position: absolute;
     border-radius: 2px;
     content: "";
@@ -128,5 +137,5 @@ h1, h2, h3{
     height: 3px;
     left: 0;
     bottom: 0;
-    background: linear-gradient(90deg, var(--brand-accent), var(--brand-accent-2));
+    background: var(--primary);
 }
