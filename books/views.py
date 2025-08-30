@@ -42,7 +42,7 @@ def book_create(request):
             book = form.save(commit=False)
             book.owner = request.user
             book.save()
-            messages.success(request, 'Book added.')
+            messages.success(request, 'Book added successfully.')
             return redirect('book_list')
     else:
         form = BookForm()
@@ -50,6 +50,7 @@ def book_create(request):
 
 @login_required
 def book_update(request, pk):
+    """Edit existing book owned by current user (Must-Have)"""
     book = get_object_or_404(Book, pk=pk, owner=request.user)
     if request.method == 'POST':
         form = BookForm(request.POST, instance=book)
@@ -57,15 +58,17 @@ def book_update(request, pk):
             form.save()
             messages.success(request, 'Book updated.')
             return redirect('book_list')
+        messages.error(request, 'Please fix the errors below.')
     else:
         form = BookForm(instance=book)
-    return render(request, 'books/book_form.html', {'form': form})
+    return render(request, 'books/book_form.html', {'form': form, 'is_edit': True, 'book': book})
 
 @login_required
 def book_delete(request, pk):
+    """Delete a book owned by current user (Must-Have)"""
     book = get_object_or_404(Book, pk=pk, owner=request.user)
     if request.method == 'POST':
         book.delete()
-        messages.info(request, 'Book deleted.')
+        messages.success(request, 'Book deleted.')
         return redirect('book_list')
     return render(request, 'books/book_confirm_delete.html', {'book': book})
