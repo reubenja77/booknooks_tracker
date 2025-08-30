@@ -1,21 +1,36 @@
-{% extends 'base.html' %} 
-{% block content %}
-    <h1>My Books</h1>
+{% extends "base.html" %} {% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="mb-0">My Books</h1>
+  <a href="{% url 'book_create' %}" class="btn btn-primary">+ Add New Book</a>
+</div>
 
-    <p><a href="{% url 'book_create' %}">+ Add New Book</a></p>
-
-    <ul>
-        {% for book in books %}
-            <li>
-                <strong>{{ book.title }}</strong> by {{ book.author }}
-                {% if book.date_read %}
-                    (Read on {{ book.date_read }})
-                {% endif %}
-                <br>
-                {{ book.description|default:'No description' }}
-            </li>
-        {% empty %}
-            <li>No books yet - add your first one!</li>
-        {% endfor %} 
-    </ul>
-{% endblock %}
+{% if books %}
+<ul class="list-group">
+  {% for book in books %}
+  <li class="list-group-item">
+    <div class="d-flex justify-content-between align-items-start">
+      <div class="me-3">
+        <div class="fw-semibold">{{ book.title }}</div>
+        <div class="text-muted">by {{ book.author }}</div>
+        {% if book.date_read %}
+        <small class="text-muted">Read on {{ book.date_read }}</small>
+        {% endif %}
+        <p class="mb-1 mt-2">{{ book.description|default:"No description" }}</p>
+      </div>
+      <div class="text-nowrap">
+        <a
+          href="{% url 'book_update' book.pk %}"
+          class="btn btn-sm btn-warning me-2"
+          >Edit</a
+        >
+        <a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-danger"
+          >Delete</a
+        >
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<div class="alert alert-info">No books yet — add your first one!</div>
+{% endif %} {% endblock %}
