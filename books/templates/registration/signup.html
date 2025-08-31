@@ -1,22 +1,27 @@
-{% extends "base.html" %} {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-6 col-lg-5">
-    <div class="card shadow-sm border-0">
-      <div class="card-body p-4">
-        <h1 class="h3 mb-3 text-center">Create Account</h1>
+{% extends "base.html" %}
+{% load static %}
 
-        <form method="post" action="{% url 'signup' %}">
-          {% csrf_token %} {{ form.as_p }} {# now renders inputs with
-          class="form-control" #}
-          <button type="submit" class="btn btn-success w-100">Sign Up</button>
+{% block hero %}
+<div class="auth-hero full-bleed" style='background-image:url("{% static "images/signup-bg.jpg" %}");'>
+  <div class="auth-overlay"></div>
+  <div class="auth-content">
+    <div class="card auth-card">
+      <div class="card-body">
+        <h2 class="mb-4 text-center">Sign Up</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary w-100">Create Account</button>
         </form>
-
         <hr class="my-4" />
         <p class="mb-0 text-center">
-          Already have an account? <a href="{% url 'login' %}">Log in</a>
+          Already have an account?
+          <a href="{% url 'login' %}">Log In</a>
         </p>
       </div>
     </div>
   </div>
 </div>
 {% endblock %}
+
+{% block content %}{% endblock %}
