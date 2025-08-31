@@ -18,15 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from books import views as book_views
 from django.http import HttpResponse
+from books.views import BookNooksLoginView
 
 def healthz(request):
     return HttpResponse('ok')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/login/', BookNooksLoginView.as_view(), name='login'),
     path('', include('books.urls')),
-    path('accounts/', include('django.contrib.auth.urls')), #login/logout/password
-    #path('', book_views.index, name='index'),
-    #path('books/', include('books.urls')),
-    #path('accounts/signup', book_views.signup, name='signup'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

@@ -1,32 +1,30 @@
-{% extends "base.html" %} {% load static %} {% block content %}
-<div class="row align-items-center g-4">
-  <div class="col-md-6">
-    <h1 class="page-title">Welcome to BookNooks</h1>
-    <p class="text-muted mt-3">
-      Track your personal library: add, view, edit, and delete your books with
-      ease.
-    </p>
+{% extends "base.html" %} {% load static %} {% block hero %}
+<section class="hero">
+  <div
+    class="hero-bg"
+    style="background-image: url('{% static 'images/landing-hero.jpg' %}')"
+  ></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content container text-center">
+    <div class="hero-copy mx-auto">
+      <h1 class="display-5 fw-bold mb-3">Welcome to BookNooks</h1>
+      <p class="lead mb-4">
+        Track your personal library — add, view, edit, and delete your books
+        with ease.
+      </p>
 
-    {% if user.is_authenticated %}
-    <a class="btn btn-primary me-2" href="{% url 'book_list' %}">
-      Go to My Books
-    </a>
-    <a class="btn btn-outline-secondary" href="{% url 'book_create' %}">
-      Add a Book
-    </a>
-    {% else %}
-    <a class="btn btn-primary me-2" href="{% url 'login' %}"> Log In </a>
-    <a class="btn btn-success" href="{% url 'signup' %}"> Sign Up </a>
-    {% endif %}
+      {% if user.is_authenticated %}
+      <a class="btn btn-primary me-2" href="{% url 'book_list' %}"
+        >Go to My Books</a
+      >
+      <a class="btn btn-outline-light" href="{% url 'book_create' %}"
+        >Add a Book</a
+      >
+      {% else %}
+      <a class="btn btn-primary me-2" href="{% url 'login' %}">Log In</a>
+      <a class="btn btn-success" href="{% url 'signup' %}">Sign Up</a>
+      {% endif %}
+    </div>
   </div>
-
-  <div class="col-md-6">
-    <img
-      src="{% static 'images/landing-hero.jpg' %}"
-      alt="Welcome to BookNooks"
-      class="img-fluid rounded shadow-sm"
-      style="max-height: 360px; object-fit: cover; width: 100%"
-    />
-  </div>
-</div>
-{% endblock %}
+</section>
+{% endblock %} {% block content %}{% endblock %}

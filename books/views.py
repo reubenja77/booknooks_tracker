@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from .forms_auth import BootstrapUserCreationForm
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book
@@ -25,14 +25,14 @@ class BookNooksLoginView(LoginView):
 def signup(request):
     """Registration"""
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = BootstrapUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             messages.success(request, 'Welcome! Your account was created.')
             return redirect('book_list')
     else:
-        form = UserCreationForm()
+        form = BootstrapUserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 
 @login_required

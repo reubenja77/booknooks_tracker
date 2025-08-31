@@ -1,25 +1,18 @@
 {% extends "base.html" %} {% block content %}
 <div class="row justify-content-center">
-  <div class="col-sm-10 col-md-6 col-lg-5">
-    <div class="card shadow-sm">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-sm border-0">
       <div class="card-body p-4">
-        <h1 class="h3 mb-3">Log In</h1>
+        <h1 class="h3 mb-3 text-center">Log In</h1>
+
         <form method="post" action="{% url 'login' %}">
-          {% csrf_token %} {{ form.non_field_errors }}
-          <div class="mb-3">
-            {{ form.username.label_tag }} {{
-            form.username|add_class:"form-control" }} {{ form.username.errors }}
-          </div>
-          <div class="mb-3">
-            {{ form.password.label_tag }} {{
-            form.password|add_class:"form-control" }} {{ form.password.errors }}
-          </div>
+          {% csrf_token %} {{ form.as_p }}
           <button type="submit" class="btn btn-primary w-100">Log In</button>
         </form>
+
         <hr class="my-4" />
-        <p class="mb-0 text-muted">
-          New to BookNooks?
-          <a href="{% url 'signup' %}">Create an account</a>
+        <p class="mb-0 text-center">
+          New here? <a href="{% url 'signup' %}">Create an account</a>
         </p>
       </div>
     </div>
