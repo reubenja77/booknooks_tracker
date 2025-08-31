@@ -1,6 +1,5 @@
 /* ====== core variables (ensure these exist at the top) ====== *
 /* --- Theme --- */
-/* deploy-bump: v-readme-crunch */
 :root {
     --bg: #F5F7FB;
     --surface: #FFFFFF;
@@ -33,6 +32,10 @@ html, body {
     letter-spacing: .2px;
 }
 
+.navbar-brand i {
+    margin-right: 8px;
+}
+
 .navbar .nav-link {
     color: #c7d2fe;
 }
@@ -40,6 +43,11 @@ html, body {
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
     color: #f4f4f4;
+}
+
+.navbar .container-fluid {
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 /* Container */
@@ -177,7 +185,8 @@ h3 {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center center !important;
+  background-repeat: no-repeat;
   z-index: 0;
 }
 
@@ -200,7 +209,3 @@ h3 {
 }
 
 .hero-copy { max-width: 720px; }
-/* bump Sun Aug 31 17:15:34 SAST 2025 */
-/* bump Sun Aug 31 17:41:48 SAST 2025 */
-/* hash-bump Sun Aug 31 19:45:41 SAST 2025 */
-/* force-bump Sun Aug 31 19:57:52 SAST 2025 */
