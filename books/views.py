@@ -7,10 +7,20 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book
 from .forms import BookForm
 
+from django.contrib.auth.views import LoginView
+from .forms_auth import BootstrapAuthenticationForm
+
+class BookNooksLoginView(LoginView):
+    template_name = 'registration/login.html'
+    authentication_form = BootstrapAuthenticationForm
+
 # Create your views here.
 def index(request):
     """Landing page"""
     return render(request, 'books/index.html')
+
+class BookNooksLoginView(LoginView):
+    template_name = 'registration/login.html'
 
 def signup(request):
     """Registration"""
