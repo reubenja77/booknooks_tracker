@@ -209,3 +209,61 @@ h3 {
 }
 
 .hero-copy { max-width: 720px; }
+
+/* Auth page Hero background */
+.auth-hero {
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.auth-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+}
+
+.auth-content {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* === Auth full-bleed ===*/
+/* Escape Bootstrap container padding wif needed */
+html, body {
+    overflow: hidden;
+}
+
+/* Full-bleed class ensures edge-to-edge background */
+.full-bleed {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Assume Bootstrap navbar ~56px tall; adjust if yours differs */
+:root { --navbar-height: 56px; }
+
+/* Override auth-hero so background sits below navbar */
+.auth-hero {
+  min-height: calc(100vh - var(--navbar-height));
+}
+.auth-content {
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+/* Constrain login/signup form card */
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}

@@ -1,7 +1,14 @@
-{% extends "base.html" %} {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-6 col-lg-5">
-    <div class="card shadow-sm border-0">
+{% extends "base.html" %} 
+{% load static %} 
+{% block hero %}
+<div
+  class="auth-hero full-bleed"
+  style="background-image: url('{% static 'images/login-bg.jpg' %}')"
+>
+  <div class="auth-overlay"></div>
+
+  <div class="auth-content">
+    <div class="card auth-card shadow-sm border-0">
       <div class="card-body p-4">
         <h1 class="h3 mb-3 text-center">Log In</h1>
 
@@ -18,4 +25,4 @@
     </div>
   </div>
 </div>
-{% endblock %}
+{% endblock %} {% block content %}{% endblock %}
