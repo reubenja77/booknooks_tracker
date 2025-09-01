@@ -7,19 +7,25 @@
   <div class="hero-overlay"></div>
   <div class="hero-content container text-center">
     <div class="hero-copy mx-auto">
-      <h1 class="display-5 fw-bold mb-3">Welcome to booknooks</h1>
+      <img
+        src="{% static 'images/booknooks-logo.png' %}"
+        alt="BookNooks logo"
+        class="brand-logo mb-3"
+      />
+
+      <h1 class="display-6 fw-bold">Welcome to BookNooks</h1>
       <p class="lead mb-4">
-        Track your personal library:<br>add, view, edit and delete your books
-        with ease.
+        A simple, elegant place to track what you’re reading, what you’ve read,
+        and what’s next.
       </p>
 
       {% if user.is_authenticated %}
-      <a class="btn btn-primary me-2" href="{% url 'book_list' %}"
-        >Go to My Books</a
-      >
-      <a class="btn btn-outline-light" href="{% url 'book_create' %}"
-        >Add a Book</a
-      >
+      <a class="btn btn-primary me-2" href="{% url 'book_list' %}">
+        <i class="bi bi-journal-text"></i> My Books
+      </a>
+      <a class="btn btn-outline-light" href="{% url 'book_create' %}">
+        <i class="bi bi-plus-lg"></i> Add a Book
+      </a>
       {% else %}
       <a class="btn btn-primary me-2" href="{% url 'login' %}">Log In</a>
       <a class="btn btn-success" href="{% url 'signup' %}">Sign Up</a>

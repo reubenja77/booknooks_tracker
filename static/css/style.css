@@ -158,15 +158,9 @@ h3 {
     position: relative;
 }
 
+/* Remove undeline */
 .page-title::after {
-    position: absolute;
-    border-radius: 2px;
-    content: "";
-    width: 42%;
-    height: 3px;
-    left: 0;
-    bottom: 0;
-    background: var(--primary);
+    content: none;
 }
 
 /* --- Hero --- */
@@ -266,4 +260,14 @@ html, body {
     width: 100%;
     max-width: 420px;
     margin: 0 auto;
+}
+
+/* Brand logo size on hero */
+.brand-logo {
+    height: 64px;
+    width: auto;
+}
+
+@media (min-width: 992px){
+    .brand-logo{ height: 72px; }
 }
