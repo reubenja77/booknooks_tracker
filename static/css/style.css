@@ -269,5 +269,19 @@ html, body {
 }
 
 @media (min-width: 992px){
-    .brand-logo{ height: 72px; }
+    .brand-logo{ 
+        height: 72px; 
+    }
 }
+
+/* Bigger brand logo on hero */
+.brand-logo{ 
+    height: 96px; 
+    width: auto; 
+}
+
+@media (min-width: 992px){
+    .brand-logo{ 
+        height: 120px; 
+    }
+}/* bump Tue Sep  2 01:10:13 SAST 2025 */
