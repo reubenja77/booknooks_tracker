@@ -11,9 +11,9 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | File | screenshot | Notes |                                                                                                 |
 | --- | --- | --- | ----------------------------------------------------------------------------------------------------------|
-| index.html | ![screenshot](assets/images/html-validation.webp) | Pass: No Errors |
-| 404.html | ![screenshot](assets/images/404-html-validation.webp) | Pass: No Errors |
+| https://booknooks-project-app-5c3a20ad5555.herokuapp.com/ | ![screenshot](static/images/w3-validation.webp) | Pass: No Errors |
 
+-----
 
 ### CSS
 
@@ -23,7 +23,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | --- | --- | --- | ----------------------------------------------------------------------------------------------------------|
 | style.css  | ![screenshot](static/images/css-validation.webp) |  Pass: No Errors |
 
-
+-----
 
 ### WAVE Web Accessibility Evaluation Tool
 
