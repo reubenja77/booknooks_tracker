@@ -14,18 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path, include
-from books import views as book_views
 from django.http import HttpResponse
+from django.urls import include, path
+
+from books import views as book_views
 from books.views import BookNooksLoginView
 
+
 def healthz(request):
-    return HttpResponse('ok')
+    return HttpResponse("ok")
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/login/', BookNooksLoginView.as_view(), name='login'),
-    path('', include('books.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path("admin/", admin.site.urls),
+    path("accounts/login/", BookNooksLoginView.as_view(), name="login"),
+    path("", include("books.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]

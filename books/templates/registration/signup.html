@@ -1,27 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block hero %}
-<div class="auth-hero full-bleed" style='background-image:url("{% static "images/signup-bg.jpg" %}");'>
-  <div class="auth-overlay"></div>
-  <div class="auth-content">
-    <div class="card auth-card">
-      <div class="card-body">
-        <h2 class="mb-4 text-center">Sign Up</h2>
-        <form method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-primary w-100">Create Account</button>
-        </form>
-        <hr class="my-4" />
-        <p class="mb-0 text-center">
-          Already have an account?
-          <a href="{% url 'login' %}">Log In</a>
-        </p>
+  <div class="auth-hero full-bleed"
+       style='background-image:url("{% static "images/signup-bg.jpg" %}")'>
+    <div class="auth-overlay"></div>
+    <div class="auth-content">
+      <div class="card auth-card">
+        <div class="card-body">
+          <h2 class="mb-4 text-center">Sign Up</h2>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Create Account</button>
+          </form>
+          <hr class="my-4" />
+          <p class="mb-0 text-center">
+            Already have an account?
+            <a href="{% url 'login' %}">Log In</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 {% endblock %}
-
 {% block content %}{% endblock %}

@@ -1,40 +1,40 @@
-{% extends "base.html" %} {% load static %} {% block hero %}
-<div
-  class="auth-hero full-bleed"
-  style="background-image: url('{% static 'images/add-book-bg.jpg' %}')"
->
-  <div class="auth-overlay"></div>
-  <div class="auth-content">
-    <div class="card auth-card shadow-sm border-0">
-      <div class="card-body p-4">
-        <h1 class="h4 mb-2">
-          {% if is_edit %}Edit Book{% else %}Add a New Book{% endif %}
-        </h1>
-        <p class="text-muted mb-3">
-          Add the title and author to start your entry. You can include a
-          description and a date you finished reading.
-        </p>
-
-        <form method="post" novalidate>
-          {% csrf_token %} {{ form.non_field_errors }} {% for field in form %}
-          <div class="mb-3">
-            {{ field.label_tag }} {{ field }} {% if field.errors %}
-            <div class="text-danger small">{{ field.errors|striptags }}</div>
-            {% endif %} {% if field.help_text %}
-            <div class="form-text">{{ field.help_text }}</div>
+{% extends "base.html" %}
+{% load static %}
+{% block hero %}
+  <div class="auth-hero full-bleed"
+       style="background-image: url('{% static 'images/add-book-bg.jpg' %}')">
+    <div class="auth-overlay"></div>
+    <div class="auth-content">
+      <div class="card auth-card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h1 class="h4 mb-2">
+            {% if is_edit %}
+              Edit Book
+            {% else %}
+              Add a New Book
             {% endif %}
-          </div>
-          {% endfor %}
-
-          <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-primary">Save</button>
-            <a href="{% url 'book_list' %}" class="btn btn-outline-secondary"
-              >Cancel</a
-            >
-          </div>
-        </form>
+          </h1>
+          <p class="text-muted mb-3">
+            Add the title and author to start your entry. You can include a
+            description and a date you finished reading.
+          </p>
+          <form method="post" novalidate>
+            {% csrf_token %} {{ form.non_field_errors }}
+            {% for field in form %}
+              <div class="mb-3">
+                {{ field.label_tag }} {{ field }}
+                {% if field.errors %}<div class="text-danger small">{{ field.errors|striptags }}</div>{% endif %}
+                {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+              </div>
+            {% endfor %}
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-{% endblock %} {% block content %}{% endblock %}
+{% endblock %}
+{% block content %}{% endblock %}

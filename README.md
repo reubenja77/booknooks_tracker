@@ -2,6 +2,10 @@
 
 BookNooks is a full-stack Django web application for managing a personal book library. Users can register, log in, and keep track of their own books in a secure and user-friendly way. This project is deployed on Heroku.
 
+![Responsiveness](static/images/responsiveness.webp) 
+
+[You can view this app here](https://booknooks-project-app-5c3a20ad5555.herokuapp.com/)
+
 ## Project Overview
 
 - **Name**: BookNooks Tracker
@@ -41,6 +45,117 @@ BookNooks is a full-stack Django web application for managing a personal book li
 
 ## UX Design
 
+The design of BookNooks Tracker focuses on simplicity and readability:
+
+- Dark-themed navbar for clear navigation.
+
+- Responsive layout using Bootstrap grid and custom CSS variables.
+
+- Consistent branding with the BookNooks logo on the landing page.
+
+- Hero section welcoming users with a short description of the site’s purpose.
+
+-----
+
+### App Flowchart:
+
+Before I started building the App, I mapped out the basic structure of the flowchart and I used LucidApp to create the flowchart.
+
+![Flowchart](assets/images/flowchart.jpg)
+
+-----
+
+### Website wireframe:
+
+Part of the I started designing the website, I went to the drawing board to map out the design structure. 
+
+![Wireframes](static/images/wireframes.webp)
+
+-----
+
+## How the App works:
+
+This section demonstrates the main flows of the BookNooks Tracker application with screenshots.
+
+### 1. Landing Page
+- Users are welcomed with the BookNooks logo and a short intro message.
+- Navigation bar links: *Login, Sign Up, My Book, Add Books, Logout*.
+
+Navbar:
+![Navbar](static/images/nav-bar.webp)
+
+
+Landing Page:
+
+![Landing page](static/images/home-page.webp)
+
+---
+
+### 2. User Authentication
+- New users can **sign up**.
+- Existing users can **log in**.
+- Once logged in, users see their personalised navigation options.
+
+- Signup:
+![Signup page](static/images/signup-page.webp)
+
+- Signup Validation:
+![Signup page](static/images/signup-validation.webp)
+
+---
+
+### 3. Add a Book
+- From *Add Book* page, users can enter:
+  - Title
+  - Author
+  - Description
+  - Date read
+- After saving, the book is linked to the logged-in user.
+
+![Add a Book page](static/images/add-book-page.webp)
+
+---
+
+### 4. View My Books
+- Displays a list of all books added by the user.
+- Styled with cards/lists for readability.
+
+![My Books page](static/images/my-books-page.webp)
+
+---
+
+### 5. Update or Delete Books
+- Each book entry has **Edit** and **Delete** buttons.
+- Edit opens the update form with prefilled details.
+- Delete asks for confirmation before removing.
+
+![Edit/Delete page](static/images/book-edit-page.webp)
+
+---
+
+### 6. Flash Messages & Feedback
+- Success and error messages appear after actions (e.g., book added, book deleted).
+
+- Book succesfully added:
+
+![Feedback message](static/images/add-book-success.webp)
+
+- Delete book alert message:
+
+![Feedback message](static/images/delete-book-message.webp)
+
+- Book successfully deleted:
+
+![Feedback message](static/images/book-delete-message-page.webp)
+
+---
+
+### 7. Responsive Design
+- Layout adapts to mobile, tablet, and desktop.
+
+![Responsiveness](static/images/add-book-page.webp)
+
+
 -----
 
 ## Features
@@ -54,9 +169,32 @@ BookNooks is a full-stack Django web application for managing a personal book li
 - Delete Book (confirming before removal)
 - Tests covering all above flows
 
+## 📚 Feature Overview
+
+| Function / View | Description | Key Features |
+| --------------- | ----------- | ------------ |
+| `signup(request)` | Handles new user registration | Uses Django’s `UserCreationForm`; validates username & password; redirects to login on success |
+| `login` / `logout` (Django built-in auth views) | Manages user authentication | Secure login/logout; only authenticated users can access book management features |
+| `index(request)` | Landing page view | Welcomes users with logo + intro message; provides navigation to key sections |
+| `book_list(request)` | Displays all books belonging to the logged-in user | Uses query filtering (`Book.objects.filter(owner=request.user)`); includes a search bar for title/author; styled list with edit/delete actions |
+| `book_create(request)` | Allows users to add new books | Displays form for Title, Author, Description, Date Read; automatically binds created book to logged-in user; validates inputs |
+| `book_update(request, pk)` | Allows editing details of an existing book | Pre-populates form with existing data; validates updates; restricted to the owner |
+| `book_delete(request, pk)` | Allows users to delete a book | Confirms before deletion; restricted to the owner; removes book from DB on success |
+| `debug_template(request)` *(dev only)* | Simple debug view to verify template rendering | Renders a test variable into `debug.html`; helps confirm template/static setup in deployment |
+
+
 ----
 
-## Deployment (Heroku)
+## Deployment & Version Control
+
+Deployment: Heroku (https://booknooks-project-app.herokuapp.com/)
+
+Database:
+- Development: SQLite (default Django)
+- Production: PostgreSQL (via Heroku DATABASE_URL)
+- Version Control: GitHub with Agile workflow
+- GitHub Projects Kanban board with MoSCoW prioritisation
+- Branching and feature commits following best practices
 
 1. **Procfile** created to run Gunicorn.
 2. **requirements.txt** generated with `pip freeze > requirements.txt`.
@@ -66,7 +204,7 @@ BookNooks is a full-stack Django web application for managing a personal book li
     ```bash
     git push heroku main
 
-Live App: 
+[Live App](https://booknooks-project-app-5c3a20ad5555.herokuapp.com/) 
 
 ---
 
@@ -89,6 +227,7 @@ Ran 11 tests in 16.706s
 
 OK
 ```
+![Test Run 01](static/images/example-test-run.webp) 
 
 ### Other tests conducted were:
 
@@ -103,4 +242,66 @@ OK
 
 ---
 
-## TEXT
+## 🗄️ Database (LO3)
+
+The `Book` model is central to the project:
+
+```python
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    date_read = models.DateField()
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+```
+
+
+> [!NOTE]  
+> For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+
+## Technologies Used
+
+- Python 3.12 — Backend language.
+
+- Django 4.2 — MVC web framework.
+
+- Bootstrap 5 — Responsive frontend framework.
+
+- Heroku — Deployment platform.
+
+- Postgres — Production database.
+
+- SQLite — Development database.
+
+- GitHub Projects — Agile project management.
+
+```
+-------
+
+## References
+
+Bootstrap 5
+
+Django documentation
+
+dbdiagram.io
+
+W3C Validator / Jigsaw CSS Validator
+
+## Credits
+
+1. Unsplash for visuals for website - [Unsplash](https://unsplash.com/)
+
+2. Youtube video Tutorial on Introduction to GitHub Project Boards by Mickey Gousset - [Introduction to GitHub Project Boards](https://www.youtube.com/watch?v=idZyqNIrt84)
+
+3. Code Institute Tutorials on Portfolio Project 4: The guide to MVP - [The guide to MVP](https://www.youtube.com/watch?v=vIv1c6RLBac)
+
+4. 
+
+8. My mentor, Rory Sheridan, for his advice, guidance and motivation through the project.
+
+------

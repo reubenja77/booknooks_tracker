@@ -1,0 +1,36 @@
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+exclude = '''
+/(
+  \.venv
+  | migrations
+  | staticfiles
+  | node_modules
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+skip = ["migrations", "staticfiles", "node_modules", ".venv"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = [
+  "E203",  # black-compatible
+  "W503"   # allow line-break before binary operator
+]
+exclude = [
+  ".venv",
+  "migrations",
+  "staticfiles",
+  "node_modules"
+]
+
+[tool.djlint]
+profile = "django"
+indent = 2
+format_css = true
+format_js = true
+ignore = "H021,H031"

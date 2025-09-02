@@ -1,54 +1,54 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block hero %}
-<div class="auth-hero full-bleed" style='background-image:url("{% static "images/my-books-bg.jpg" %}");'>
-  <div class="auth-overlay"></div>
-  <div class="auth-content">
-    <div class="card auth-card shadow-sm border-0">
-      <div class="card-body p-4">
-        <h1 class="h4 mb-2">My Books</h1>
-        <p class="text-muted mb-3">
-          Your personal library—search, review, and manage the books you care about.
-        </p>
-
-        <form method="get" class="mb-3 d-flex gap-2">
-          <input type="text" name="q" value="{{ q }}" class="form-control" placeholder="Search by title or author">
-          <button class="btn btn-outline-secondary" type="submit">Search</button>
-          <a class="btn btn-primary" href="{% url 'book_create' %}"><i class="bi bi-plus-lg"></i> Add Book</a>
-        </form>
-
-        {% if books %}
-          <ul class="list-group">
-            {% for book in books %}
-              <li class="list-group-item">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div class="fw-semibold">{{ book.title }}</div>
-                    <small class="text-muted">by {{ book.author }}</small>
-                    {% if book.date_read %}<small class="text-muted"> • read {{ book.date_read }}</small>{% endif %}
-                    {% if book.description %}<div class="text-muted mt-1">{{ book.description }}</div>{% endif %}
+  <div class="auth-hero full-bleed"
+       style='background-image:url("{% static "images/my-books-bg.jpg" %}")'>
+    <div class="auth-overlay"></div>
+    <div class="auth-content">
+      <div class="card auth-card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h1 class="h4 mb-2">My Books</h1>
+          <p class="text-muted mb-3">Your personal library—search, review, and manage the books you care about.</p>
+          <form method="get" class="mb-3 d-flex gap-2">
+            <input type="text"
+                   name="q"
+                   value="{{ q }}"
+                   class="form-control"
+                   placeholder="Search by title or author">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <a class="btn btn-primary" href="{% url 'book_create' %}"><i class="bi bi-plus-lg"></i> Add Book</a>
+          </form>
+          {% if books %}
+            <ul class="list-group">
+              {% for book in books %}
+                <li class="list-group-item">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <div class="fw-semibold">{{ book.title }}</div>
+                      <small class="text-muted">by {{ book.author }}</small>
+                      {% if book.date_read %}<small class="text-muted">• read {{ book.date_read }}</small>{% endif %}
+                      {% if book.description %}<div class="text-muted mt-1">{{ book.description }}</div>{% endif %}
+                    </div>
+                    <div class="ms-3">
+                      <a href="{% url 'book_update' book.pk %}"
+                         class="btn btn-sm btn-outline-secondary">Edit</a>
+                      <a href="{% url 'book_delete' book.pk %}"
+                         class="btn btn-sm btn-outline-danger">Delete</a>
+                    </div>
                   </div>
-                  <div class="ms-3">
-                    <a href="{% url 'book_update' book.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
-                    <a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
-                  </div>
-                </div>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <div class="empty-state mt-2">
-            <h2 class="h6 mb-2">No books yet</h2>
-            <p class="text-muted mb-3">Start your library by adding your first book.</p>
-            <a class="btn btn-primary" href="{% url 'book_create' %}">Add a Book</a>
-          </div>
-        {% endif %}
-
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <div class="empty-state mt-2">
+              <h2 class="h6 mb-2">No books yet</h2>
+              <p class="text-muted mb-3">Start your library by adding your first book.</p>
+              <a class="btn btn-primary" href="{% url 'book_create' %}">Add a Book</a>
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
-</div>
 {% endblock %}
-
 {% block content %}{% endblock %}

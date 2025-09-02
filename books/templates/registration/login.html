@@ -1,28 +1,24 @@
-{% extends "base.html" %} 
-{% load static %} 
+{% extends "base.html" %}
+{% load static %}
 {% block hero %}
-<div
-  class="auth-hero full-bleed"
-  style="background-image: url('{% static 'images/login-bg.jpg' %}')"
->
-  <div class="auth-overlay"></div>
-
-  <div class="auth-content">
-    <div class="card auth-card shadow-sm border-0">
-      <div class="card-body p-4">
-        <h1 class="h3 mb-3 text-center">Log In</h1>
-
-        <form method="post" action="{% url 'login' %}">
-          {% csrf_token %} {{ form.as_p }}
-          <button type="submit" class="btn btn-primary w-100">Log In</button>
-        </form>
-
-        <hr class="my-4" />
-        <p class="mb-0 text-center">
-          New here? <a href="{% url 'signup' %}">Create an account</a>
-        </p>
+  <div class="auth-hero full-bleed"
+       style="background-image: url('{% static 'images/login-bg.jpg' %}')">
+    <div class="auth-overlay"></div>
+    <div class="auth-content">
+      <div class="card auth-card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h1 class="h3 mb-3 text-center">Log In</h1>
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Log In</button>
+          </form>
+          <hr class="my-4" />
+          <p class="mb-0 text-center">
+            New here? <a href="{% url 'signup' %}">Create an account</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-{% endblock %} {% block content %}{% endblock %}
+{% endblock %}
+{% block content %}{% endblock %}
