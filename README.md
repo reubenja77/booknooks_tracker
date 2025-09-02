@@ -300,7 +300,9 @@ W3C Validator / Jigsaw CSS Validator
 
 3. Code Institute Tutorials on Portfolio Project 4: The guide to MVP - [The guide to MVP](https://www.youtube.com/watch?v=vIv1c6RLBac)
 
-4. 
+4. Youtube video Tutorial on How to fix Django "Bad Request (400)" error with ALLOWED_HOSTS on Heroku by BugBytes - [Django Graph Models command](https://www.youtube.com/watch?v=qzrE7cfc_3Q)
+
+5. 
 
 8. My mentor, Rory Sheridan, for his advice, guidance and motivation through the project.
 
