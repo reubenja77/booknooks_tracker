@@ -59,7 +59,7 @@ The design of BookNooks Tracker focuses on simplicity and readability:
 
 ### Website wireframe:
 
-Part of the I started designing the website, I went to the drawing board to map out the design structure. 
+A wireframe was created to map out the skeletal framework of the website to ensure that the structure of the project is logical and functional. 
 
 ![Wireframes](static/images/wireframes.webp)
 
@@ -73,11 +73,11 @@ This section demonstrates the main flows of the BookNooks Tracker application wi
 - Users are welcomed with the BookNooks logo and a short intro message.
 - Navigation bar links: *Login, Sign Up, My Book, Add Books, Logout*.
 
-Navbar:
+#### Navbar:
 ![Navbar](static/images/nav-bar.webp)
 
 
-Landing Page:
+#### Landing Page:
 
 ![Landing page](static/images/home-page.webp)
 
@@ -88,10 +88,12 @@ Landing Page:
 - Existing users can **log in**.
 - Once logged in, users see their personalised navigation options.
 
-- Signup:
+#### Signup:
+
 ![Signup page](static/images/signup-page.webp)
 
-- Signup Validation:
+#### - Signup Validation:
+
 ![Signup page](static/images/signup-validation.webp)
 
 ---
@@ -109,6 +111,7 @@ Landing Page:
 ---
 
 ### 4. View My Books
+
 - Displays a list of all books added by the user.
 - Styled with cards/lists for readability.
 
@@ -117,6 +120,7 @@ Landing Page:
 ---
 
 ### 5. Update or Delete Books
+
 - Each book entry has **Edit** and **Delete** buttons.
 - Edit opens the update form with prefilled details.
 - Delete asks for confirmation before removing.
@@ -126,6 +130,7 @@ Landing Page:
 ---
 
 ### 6. Flash Messages & Feedback
+
 - Success and error messages appear after actions (e.g., book added, book deleted).
 
 - Book succesfully added:
@@ -143,6 +148,7 @@ Landing Page:
 ---
 
 ### 7. Responsive Design
+
 - Layout adapts to mobile, tablet, and desktop.
 
 ![Responsiveness](static/images/responsiveness.webp)
