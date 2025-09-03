@@ -25,6 +25,14 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 -----
 
+#### PEP8 compliance checked with flake8, black, isort, djlint
+| ![screenshot](static/images/flake-01.webp) | Not all issues were resolved |
+------
+| ![screenshot](static/images/flake-02.webp) | Not all issues were resolved |
+
+
+-----
+
 ### WAVE Web Accessibility Evaluation Tool
 
 I've also tested my deployed project on WAVE Web Accessibility Evaluation Tool to check for any issues.
@@ -32,7 +40,7 @@ I've also tested my deployed project on WAVE Web Accessibility Evaluation Tool t
 | Browser | Summary | Details | Structure | Contrast | Homepage | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | Chrome | ![screenshot](static/images/wave-home-summary-page.webp) | ![screenshot](static/images/wave-home-details-page.webp) | ![screenshot](static/images/wave-home-structure-page.webp) | ![screenshot](static/images/wave-home-contrast-page.webp) | ![screenshot](static/images/wave-home-landing-page.webp) | Pass: No Errors |
-| |
+|
 
 
 ## Browser Compatibility

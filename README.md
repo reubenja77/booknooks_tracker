@@ -1,6 +1,6 @@
 # BookNooks Tracker
 
-BookNooks is a full-stack Django web application for managing a personal book library. Users can register, log in, and keep track of their own books in a secure and user-friendly way. This project is deployed on Heroku.
+BookNooks Tracker is a full-stack Django web application that enables users to record, manage, and track books they have read. The focus is on user experience, responsiveness, and data management, ensuring a modern and reliable app for book lovers. This project is deployed on Heroku.
 
 ![Responsiveness](static/images/responsiveness.webp) 
 
@@ -54,14 +54,6 @@ The design of BookNooks Tracker focuses on simplicity and readability:
 - Consistent branding with the BookNooks logo on the landing page.
 
 - Hero section welcoming users with a short description of the site’s purpose.
-
------
-
-### App Flowchart:
-
-Before I started building the App, I mapped out the basic structure of the flowchart and I used LucidApp to create the flowchart.
-
-![Flowchart](assets/images/flowchart.jpg)
 
 -----
 
@@ -153,8 +145,7 @@ Landing Page:
 ### 7. Responsive Design
 - Layout adapts to mobile, tablet, and desktop.
 
-![Responsiveness](static/images/add-book-page.webp)
-
+![Responsiveness](static/images/responsiveness.webp)
 
 -----
 
@@ -258,6 +249,13 @@ class Book(models.Model):
     )
 ```
 
+## Database Schema
+
+The BookNooks Tracker uses a PostgreSQL database with two main tables: `users` and `books`.  
+Each book entry belongs to a user via a foreign key relationship (`owner_id` → `users.id`).
+
+![Database Diagram](static/images/database-diagram.png)
+
 
 > [!NOTE]  
 > For all testing, please refer to the [TESTING.md](TESTING.md) file.
@@ -311,5 +309,12 @@ A concise overview of frequent Django errors—such as field typos, forgeting mi
 [Medium articles](https://medium.com/@kanithkar_baskaran/13-django-error-with-solution-775e247c25be) 
 
 9. My mentor, Rory Sheridan, for his advice, guidance and motivation through the project.
+
+**Django Documentation** – for guidance on settings, templates, models, and deployment troubleshooting.  
+- **Heroku Documentation** – for deployment setup and environment configuration.  
+- **Bootstrap (getbootstrap.com)** – for frontend styling, including responsive grids, columns, and layout components using the Bootstrap CDN.  
+- **dbdiagram.io** – for generating the entity relationship diagram used in the README.  
+- **YouTube tutorials and community discussions** – for resolving specific issues such as Bad Request (400), TemplateDoesNotExist, and form field errors.
+
 
 ------
