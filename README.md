@@ -279,20 +279,9 @@ class Book(models.Model):
 
 - GitHub Projects — Agile project management.
 
-```
 -------
 
-## References
-
-Bootstrap 5
-
-Django documentation
-
-dbdiagram.io
-
-W3C Validator / Jigsaw CSS Validator
-
-## Credits
+## References/Credits
 
 1. Unsplash for visuals for website - [Unsplash](https://unsplash.com/)
 
@@ -302,8 +291,25 @@ W3C Validator / Jigsaw CSS Validator
 
 4. Youtube video Tutorial on How to fix Django "Bad Request (400)" error with ALLOWED_HOSTS on Heroku by BugBytes - [Django Graph Models command](https://www.youtube.com/watch?v=qzrE7cfc_3Q)
 
-5. 
+5. Fixing missing templates (`TemplateDoesNotExist`):
+Guide explaining how to correctly configure `TEMPLATES['DIRS']` and folder structure in Django.
+[Stackoverflow](https://stackoverflow.com/search?q=TemplateDoesNotExist&s=4f5e7569-e960-4b61-9994-15c5abe6aaf7)
 
-8. My mentor, Rory Sheridan, for his advice, guidance and motivation through the project.
+6. Organising templates within apps:
+Discussion on app-level `templates/` directories and `APP_DIRS=True` in settings.
+[Learn Django](https://learndjango.com/tutorials/template-structure)
+[Django Forum](https://forum.djangoproject.com/t/extending-get-user-model/28777)
+
+7. Troubleshooting `TypeError` in Django views:
+Article highlightes strategies for identifying invalid arguments, non-iterables, and debugging TypeErrors during view rendering.
+[MoldStud](https://moldstud.com/articles/p-essential-tips-for-fixing-django-typeerror-in-view-functions)
+[Stackoverflow](https://stackoverflow.com/questions/68623861/how-to-fix-this-exception-and-type-error-django)
+
+8. Common Django errors and fixes:
+A concise overview of frequent Django errors—such as field typos, forgeting migrations, or template lookup issues—and how to fix them. 
+[Django documentation](https://docs.djangoproject.com/en/5.2/faq/troubleshooting/)
+[Medium articles](https://medium.com/@kanithkar_baskaran/13-django-error-with-solution-775e247c25be) 
+
+9. My mentor, Rory Sheridan, for his advice, guidance and motivation through the project.
 
 ------
