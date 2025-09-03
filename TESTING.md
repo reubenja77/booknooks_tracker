@@ -51,8 +51,12 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- | 
-| Home | ![screenshot](assets/images/lhs-mobile.webp) | ![screenshot](assets/images/lhs-desktop.webp) | Warnings: Resource are blocking the first paint of your page and error logged to console due to network request failure. |
-| 404 error page | ![screenshot](assets/images/404-lhs-mobile.webp) | ![screenshot](assets/images/404-lhs-desktop.webp) | Lighthouse was unable to reliably load the page you requested. Make sure you are testing the correct URL and that the server is properly responding to all requests. (Status code: 404) |
+| Home | ![screenshot](static/images/lighthouse-landing-mobile.webp) | ![screenshot](static/images/lighthouse-landing-desktop.webp) | Warnings: 
+Uses deprecated APIs 1 warning found. |
+| Signup | ![screenshot](static/images/lighthouse-signup-mobile.webp) | ![screenshot](static/images/lighthouse-signup-desktop.webp) | Largest Contentful Paint element 6,260 ms. |
+| Login | ![screenshot](static/images/lighthouse-login-mobile.webp) | ![screenshot](static/images/lighthouse-login-desktop.webp) | Largest Contentful Paint element 6,490 ms. |
+| My Books | ![screenshot](static/images/lighthouse-my-books-mobile.webp) | ![screenshot](static/images/lighthouse-my-books-desktop.webp) | Preconnect to required origins Est savings of 280 ms. |
+| Add Books | ![screenshot](static/images/lighthouse-add-book-mobile.webp) | ![screenshot](static/images/lighthouse-add-book-desktop.webp) | Preconnect to required origins Est savings of 350 ms. |
 
 ## Responsiveness
 
